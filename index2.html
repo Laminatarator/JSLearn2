@@ -5,13 +5,29 @@
    //     console.log(1);
     //    console.log(i);
    // }
-        for(let i=1;i<101; i=i+1)
+   // let result = 0
+   // let number1 = Number(prompt('От:'))
+   // let number2 = Number(prompt('До:'))
+   //     for(let i=number1;i<number2+1; i=i+1)
+   // {
+        // console.log(i);
+   //     result = result+i
+   // }
+    //console.log('Ответ: '+result)
+   // alert('Ответ: '+result);  
+    let number = Number(prompt('Ваше число: '))
+    let result = 1
+    if (number > 0) 
     {
-        console.log(1);
-        console.log(i);
+        for(i=1; i<number; i++  )  
+        {   
+            result*=i 
+        }  
+        alert(result)        
+    } 
+    else
+    {
+        alert('Некорректный формат данных')
     }
-    
-
-
 
 </script>
