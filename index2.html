@@ -17,17 +17,18 @@
    // alert('Ответ: '+result);  
     let number = Number(prompt('Ваше число: '))
     let result = 1
-    if (number > 0) 
+    if (number < 0) 
+    {
+
+        alert('Некорректный формат данных')      
+    } 
+    else
     {
         for(i=1; i<number; i++  )  
         {   
             result*=i 
         }  
-        alert(result)        
-    } 
-    else
-    {
-        alert('Некорректный формат данных')
+        alert(result)  
     }
 
 </script>
