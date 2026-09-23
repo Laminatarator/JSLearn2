@@ -17,13 +17,20 @@
 //      console.log(value)
 //   }
 let summ = 0
-let kol = 0
+let mtf = 0
 const grades = [3.2, 4.79, 4.2, 3.8, 3.3, 5]
 for(const g of grades)
 {
 summ +=g
-kol += 1
+if (g>=4)
+{
+   mtf +=1
 }
-res = summ/kol
-console.log(res)
+}
+res = summ/grades.length
+console.log('Ответ: ' + res + '. Оценок больше 4: '+mtf)
+
+
+
+
 </script>
