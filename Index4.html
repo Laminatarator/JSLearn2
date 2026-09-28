@@ -1,5 +1,32 @@
 <!doctype HTML>
 <script>
-        
+
+const num = [95, 65 ,48 -65, 4, 8, 12, 32, -9, 5, 123, 48, 59, 36, 17, 16, 52, 46, 27, 90, 57 ]
+const numsq =[]
+console.log(num.length)
+for(const i of num)
+{
+    numsq.push(i*i)
+}
+console.log(numsq)
+
+let even = []
+let odd = []
+for(const j of numsq)
+{
+    if(j%2==0)
+    {
+        even.push(j)
+    }
+    else
+    {
+        odd.push(j)
+    }
+}
+console.log('Четные:', even)
+console.log('Нечетные:', odd)
+
+
+
 
 </script>
