@@ -1,0 +1,70 @@
+<!doctype HTML>
+<script>
+ /*
+    const num = []
+    for(let i = 0; i<10; i++ )
+    {
+        const n = Math.floor(Math.random()*101-50)
+        num.push(n)
+    }
+    console.log(num)
+    const res1 = []
+        for(const i in num)
+    {
+        const _i = Number(i)
+        if(_i%3 == 0)
+        {
+           res1.push(num[_i]*2) 
+        }
+    }
+    console.log(res1)
+*/
+/*
+const num = []
+const usernumber = prompt('Введите число от 0 до 100:')
+let result =0
+if(usernumber%1!=0)
+{
+    alert('Неверный формат')
+}
+else
+{
+    for (let i = 0; i<10000; i++ )
+    {
+        const n = Math.floor(Math.random()*101)
+        num.push(n)
+    }
+
+    for (let j of num)
+    {
+        if(usernumber ==Number(j))
+        {
+            result++
+        }
+    }
+    console.log(num, result)
+    alert('Число '+ usernumber+ ' встречается '+ result+ ' раз')
+}
+*/
+
+const num = []
+let result =0
+
+    for (let i = 0; i<100; i++ )
+    {
+        const n = Math.floor(Math.random()*101-50)
+        num.push(n)
+    }
+
+    for (let j of num)
+    {
+        if(j<0)
+        {
+            result++
+        }
+    }
+    console.log(num, result)
+    alert('Всего: '+ result+ ' отрицательных чисел')
+
+
+</script>
