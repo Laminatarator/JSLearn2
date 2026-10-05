@@ -7,6 +7,38 @@
 <body > </body>
 <script>
 
+const s = 
+[
+    [4, 2, 5, 5],
+    [3, 3, 3],
+    [5],
+    [5, 5, 3, 3, 4, 4],
+    [3, 4, 3, 3, 3]
+]
+/*
+console.log(s)
+console.log(s[3])
+console.log(s[3][1])
 
+s[2].push(4, 6)
+console.log(s[2])
+s[2].pop()
+console.log(s[2])
+s[2][0]=2
+console.log(s[2])
+*/
+let count1 = 0
+for(const r of s){
+    console.log(r)
+    if(r==5)
+{
+    count1++
+}
 
+}
+for (let bombsleft = 8; bombsleft>=0; bombsleft--){
+        currow = Math.floor(Math.random()*10)
+        curstr = Math.floor(Math.random()*10)
+        console.log(currow, curstr)   
+}    
 </script>

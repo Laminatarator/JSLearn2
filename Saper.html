@@ -1,0 +1,47 @@
+<!doctype HTML>
+<style>
+    body { 
+        background-color: black;
+}
+</style>
+<body > </body>
+<script>
+
+let pole = 
+[
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+]
+console.log(pole)
+let currow = -1
+let curstr = -1
+for (let bombsleft = 8; bombsleft>=0; bombsleft--){
+        currow = Math.floor(Math.random()*10 -1)
+        curstr = Math.floor(Math.random()*10 -1)
+       console.log( pole[currow][curstr])  
+
+}
+
+/*
+console.log(pole[1])
+let userrow = prompt('Введите столбец')
+let userstr = prompt('Введите строку')
+
+if (pole[userrow][userstr] ==0)
+{
+    alert('Клетка пуста')
+}
+else
+{
+    alert('Это бомба')
+}
+*/
+
+</script>
