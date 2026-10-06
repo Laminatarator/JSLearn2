@@ -20,6 +20,18 @@ let pole =
 [73, 74, 75, 76, 77, 78, 79, 80, 81],
 
 ]
+let userpole =
+[
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0]
+]
 
 
 let currow = -1
@@ -39,17 +51,26 @@ for (let bombsleft = 8; bombsleft>=0; bombsleft--){
 
 
 console.log(pole)
-let userrow = prompt('Введите столбец')
-let userstr = prompt('Введите строку')
-
+let canplay = true
+while(canplay == true){
+let userrow = Number(prompt('Введите столбец')) -1
+let userstr = Number(prompt('Введите строку')) -1
 if (pole[userrow][userstr] ==-1)
 {
-    alert('Это бомба')
+    alert('Это бомба, Вы проиграли !')
+    canplay = false
 }
 else
 {
 
-    alert('Клетка пуста', pole[userrow][userstr])
+    alert('Клетка пуста')
+    userpole[userrow][userstr]=1
+    console.log('Ваше поле: ')
+    for(let c =0; c<9; c++)
+    {
+        console.log(userpole[c])
+    }
+}
 }
 
 </script>
