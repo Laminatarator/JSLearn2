@@ -66,6 +66,39 @@ else
 
     alert('Клетка пуста')
     userpole[userrow][userstr]=1
+
+
+for (let i = -1; i <= 1; i++) {
+    for (let j = -1; j <= 1; j++) {
+        if (i === 0 && j === 0) continue;
+
+        let neighborRow = userrow + i;
+        let neighborStr = userstr + j;
+        if (neighborRow >= 0 && neighborRow < 9 && neighborStr >= 0 && neighborStr < 9) {
+            if (pole[neighborRow][neighborStr] === -1) {
+                userpole[neighborRow][neighborStr] = 'B';
+            } 
+            else {
+                userpole[neighborRow][neighborStr] = 1;
+            }
+        }
+    }
+}
+    console.log('Ваше поле: ')
+    for(let c =0; c<9; c++)
+    {
+        console.log(userpole[c])
+    }
+
+
+
+}
+}
+existkletka = true
+
+
+
+/*
 //1
 if (pole[userrow +1][userstr]%1==0)
 {
@@ -171,117 +204,8 @@ if (pole[userrow-1][userstr+1]%1==0)
 }
 else{}
 
-    console.log('Ваше поле: ')
-    for(let c =0; c<9; c++)
-    {
-        console.log(userpole[c])
-    }
-
-
-
-}
-}
-existkletka = true
-
-
-/*
-//1
-if (pole[userrow +1][userstr]%1==0)
-{
-    if(pole[userrow +1][userstr] == 0)
-    {
-        userpole[userrow +1][userstr]= B
-    }
-    else
-    {
-         userpole[userrow +1][userstr]= 1
-    }
-}
-//2
-if (pole[userrow +1][userstr-1]%1==0)
-{
-    if(pole[userrow +1][userstr-1] == 0)
-    {
-        userpole[userrow +1][userstr-1]= B
-    }
-    else
-    {
-         userpole[userrow +1][userstr-1]= 1
-    }
-}
-//3
-if (pole[userrow ][userstr-1]%1==0)
-{
-    if(pole[userrow][userstr-1] == 0)
-    {
-        userpole[userrow][userstr-1]= B
-    }
-    else
-    {
-         userpole[userrow ][userstr-1]= 1
-    }
-}
-//4
-if (pole[userrow +1][userstr-1]%1==0)
-{
-    if(pole[userrow +1][userstr-1] == 0)
-    {
-        userpole[userrow +1][userstr-1]= B
-    }
-    else
-    {
-         userpole[userrow +1][userstr-1]= 1
-    }
-}
-//5
-if (pole[userrow +1][userstr]%1==0)
-{
-    if(pole[userrow +1][userstr] == 0)
-    {
-        userpole[userrow +1][userstr]= B
-    }
-    else
-    {
-         userpole[userrow +1][userstr]= 1
-    }
-}
-//6
-if (pole[userrow +1][userstr+1]%1==0)
-{
-    if(pole[userrow +1][userstr+1] == 0)
-    {
-        userpole[userrow +1][userstr+1]= B
-    }
-    else
-    {
-         userpole[userrow +1][userstr+1]= 1
-    }
-}
-//7
-if (pole[userrow][userstr+1]%1==0)
-{
-    if(pole[userrow][userstr+1] == 0)
-    {
-        userpole[userrow][userstr+1]= B
-    }
-    else
-    {
-         userpole[userrow][userstr+1]= 1
-    }
-}
-//8
-if (pole[userrow-1][userstr+1]%1==0)
-{
-    if(pole[userrow -1][userstr+1] == 0)
-    {
-        userpole[userrow -1][userstr+1]= B
-    }
-    else
-    {
-         userpole[userrow -1][userstr+1]= 1
-    }
-}
-else{}
 */
 
 </script>
+
+
