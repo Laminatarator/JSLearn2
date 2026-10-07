@@ -7,6 +7,8 @@
 </style>
 <body > </body>
 <script>
+    let sum = 0
+    let count = 0
 const a = 
 [
     [8, 10, -6, 5],
@@ -16,11 +18,15 @@ const a =
 ]
     for(let i = 0; i<a.length; i++)
 {
-    console.log(`Строка ${i}: ${a[i]}`)
     for(let j=0; j<a[i].length;j++)
     {
-        console.log(`Строка ${i}, Столбец ${j}, Число${a[i][j]}`)
+            if (a[i][j]%2==0)
+            {
+                sum +=a[i][j]
+                count++
+            }
     }
 }
+console.log(sum/count)
 
 </script>
