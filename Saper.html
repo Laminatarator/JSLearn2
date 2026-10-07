@@ -6,206 +6,42 @@
 </style>
 <body > </body>
 <script>
-console.log(-1%1)
-console.log(-0==0)
+
 let pole = 
 [
-[1, 2, 3, 4, 5, 6, 7, 8, 9],
-[10, 11, 12, 13, 14, 15, 16, 17, 18],
-[19, 20, 21, 22, 23, 24, 25, 26, 27],
-[28, 29, 30, 31, 32, 33, 34, 35, 36],
-[37, 38, 39, 40, 41, 42, 43, 44, 45],
-[46, 47, 48, 49, 50, 51, 52, 53, 54],
-[55, 56, 57, 58, 59, 60, 61, 62, 63],
-[64, 65, 66, 67, 68, 69, 70, 71, 72],
-[73, 74, 75, 76, 77, 78, 79, 80, 81],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 ]
-let userpole =
-[
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0]
-]
-
-
+console.log(pole)
 let currow = -1
 let curstr = -1
 for (let bombsleft = 8; bombsleft>=0; bombsleft--){
         currow = Math.floor(Math.random()*10 -1)
         curstr = Math.floor(Math.random()*10 -1)
-        if (currow <0 ){ bombsleft++}
-        else if (curstr<0){bombsleft++}
-        else
-        {
-            pole[currow][curstr] = -1
-        }
-        console.log(currow, curstr)
+       console.log( pole[currow][curstr])  
 
 }
 
+/*
+console.log(pole[1])
+let userrow = prompt('Введите столбец')
+let userstr = prompt('Введите строку')
 
-console.log(pole)
-let canplay = true
-while(canplay == true){
-let userrow = Number(prompt('Введите столбец')) -1
-let userstr = Number(prompt('Введите строку')) -1
-if (pole[userrow][userstr] ==-1.1)
+if (pole[userrow][userstr] ==0)
 {
-    alert('Это бомба, Вы проиграли !')
-    canplay = false
+    alert('Клетка пуста')
 }
 else
 {
-
-    alert('Клетка пуста')
-    userpole[userrow][userstr]=1
-
-
-for (let i = -1; i <= 1; i++) {
-    for (let j = -1; j <= 1; j++) {
-        if (i === 0 && j === 0) continue;
-
-        let neighborRow = userrow + i;
-        let neighborStr = userstr + j;
-        if (neighborRow >= 0 && neighborRow < 9 && neighborStr >= 0 && neighborStr < 9) {
-            if (pole[neighborRow][neighborStr] === -1) {
-                userpole[neighborRow][neighborStr] = 'B';
-            } 
-            else {
-                userpole[neighborRow][neighborStr] = 1;
-            }
-        }
-    }
+    alert('Это бомба')
 }
-    console.log('Ваше поле: ')
-    for(let c =0; c<9; c++)
-    {
-        console.log(userpole[c])
-    }
-
-
-
-}
-}
-existkletka = true
-
-
-
-/*
-//1
-if (pole[userrow +1][userstr]%1==0)
-{
-    if(pole[userrow +1][userstr] == -1)
-    {
-        userpole[userrow +1][userstr]= 'B'
-    }
-    else
-    {
-         userpole[userrow +1][userstr]= 1
-    }
-}
-else{}
-//2
-if (pole[userrow +1][userstr-1]%1==0)
-{
-    if(pole[userrow +1][userstr-1] == -1)
-    {
-        userpole[userrow +1][userstr-1]= 'B'
-    }
-    else
-    {
-         userpole[userrow +1][userstr-1]= 1
-    }
-}
-else{}
-//3
-if (pole[userrow ][userstr-1]%1==0)
-{
-    if(pole[userrow][userstr-1] == -1)
-    {
-        userpole[userrow][userstr-1]= 'B'
-    }
-    else
-    {
-         userpole[userrow ][userstr-1]= 1
-    }
-}
-else{}
-//4 
-if (pole[userrow - 1][userstr - 1] % 1 == 0) 
-{
-    if (pole[userrow - 1][userstr - 1] == -1) 
-    {
-        userpole[userrow - 1][userstr - 1] = 'B'
-    } 
-    else
-    {
-        userpole[userrow - 1][userstr - 1] = 1
-    }
-} 
-else {}
-//5 
-if (pole[userrow - 1][userstr] % 1 == 0) 
-{
-    if (pole[userrow - 1][userstr] == -1) 
-    {
-        userpole[userrow - 1][userstr] = 'B'
-    } 
-    else 
-    {
-        userpole[userrow - 1][userstr] = 1
-    }
-} else {}
-
-//6
-if (pole[userrow +1][userstr+1]%1==0)
-{
-    if(pole[userrow +1][userstr+1] == -1)
-    {
-        userpole[userrow +1][userstr+1]= 'B'
-    }
-    else
-    {
-         userpole[userrow +1][userstr+1]= 1
-    }
-}
-else{}
-//7
-if (pole[userrow][userstr+1]%1==0)
-{
-    if(pole[userrow][userstr+1] == -1)
-    {
-        userpole[userrow][userstr+1]= 'B'
-    }
-    else
-    {
-         userpole[userrow][userstr+1]= 1
-    }
-}
-else{}
-//8
-if (pole[userrow-1][userstr+1]%1==0)
-{
-    if(pole[userrow -1][userstr+1] == -1)
-    {
-        userpole[userrow -1][userstr+1]= 'B'
-    }
-    else
-    {
-         userpole[userrow -1][userstr+1]= 1
-    }
-}
-else{}
-
 */
 
 </script>
-
-
