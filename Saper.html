@@ -44,7 +44,7 @@ for (let bombsleft = 8; bombsleft>=0; bombsleft--){
         else if (curstr<0){bombsleft++}
         else
         {
-            pole[currow][curstr] = -1.1
+            pole[currow][curstr] = -1
         }
         console.log(currow, curstr)
 
@@ -66,9 +66,10 @@ else
 
     alert('Клетка пуста')
     userpole[userrow][userstr]=1
+//1
 if (pole[userrow +1][userstr]%1==0)
 {
-    if(pole[userrow +1][userstr] == 0)
+    if(pole[userrow +1][userstr] == -1)
     {
         userpole[userrow +1][userstr]= 'B'
     }
@@ -81,7 +82,7 @@ else{}
 //2
 if (pole[userrow +1][userstr-1]%1==0)
 {
-    if(pole[userrow +1][userstr-1] == 0)
+    if(pole[userrow +1][userstr-1] == -1)
     {
         userpole[userrow +1][userstr-1]= 'B'
     }
@@ -92,9 +93,9 @@ if (pole[userrow +1][userstr-1]%1==0)
 }
 else{}
 //3
-if (pole[userrow ][userstr-1])
+if (pole[userrow ][userstr-1]%1==0)
 {
-    if(pole[userrow][userstr-1] == 0)
+    if(pole[userrow][userstr-1] == -1)
     {
         userpole[userrow][userstr-1]= 'B'
     }
@@ -107,7 +108,7 @@ else{}
 //4 
 if (pole[userrow - 1][userstr - 1] % 1 == 0) 
 {
-    if (pole[userrow - 1][userstr - 1] == 0) 
+    if (pole[userrow - 1][userstr - 1] == -1) 
     {
         userpole[userrow - 1][userstr - 1] = 'B'
     } 
@@ -120,7 +121,7 @@ else {}
 //5 
 if (pole[userrow - 1][userstr] % 1 == 0) 
 {
-    if (pole[userrow - 1][userstr] == 0) 
+    if (pole[userrow - 1][userstr] == -1) 
     {
         userpole[userrow - 1][userstr] = 'B'
     } 
@@ -133,7 +134,7 @@ if (pole[userrow - 1][userstr] % 1 == 0)
 //6
 if (pole[userrow +1][userstr+1]%1==0)
 {
-    if(pole[userrow +1][userstr+1] == 0)
+    if(pole[userrow +1][userstr+1] == -1)
     {
         userpole[userrow +1][userstr+1]= 'B'
     }
@@ -146,7 +147,7 @@ else{}
 //7
 if (pole[userrow][userstr+1]%1==0)
 {
-    if(pole[userrow][userstr+1] == 0)
+    if(pole[userrow][userstr+1] == -1)
     {
         userpole[userrow][userstr+1]= 'B'
     }
@@ -159,7 +160,7 @@ else{}
 //8
 if (pole[userrow-1][userstr+1]%1==0)
 {
-    if(pole[userrow -1][userstr+1] == 0)
+    if(pole[userrow -1][userstr+1] == -1)
     {
         userpole[userrow -1][userstr+1]= 'B'
     }
