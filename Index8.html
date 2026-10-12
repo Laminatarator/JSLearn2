@@ -1,0 +1,55 @@
+<!doctype HTML>
+<style>
+    body 
+{ 
+    background-color: black;
+}
+</style>
+<body > </body>
+<script>
+
+function f1()
+{
+    console.log('Hello, world!')
+}
+f1()
+
+
+function f2(i)
+{
+    i++
+    console.log(i)
+}
+
+f2(58)
+
+function f3(username)
+{
+    username = prompt('Ваше имя')
+    console.log(`Привет, ${username}`)
+}
+
+f3()
+
+function f4(a, b)
+{
+    a =Number(prompt('Слагаемое 1:'))
+    b =Number(prompt('Слагаемое 2:'))
+    r=a+b
+    console.log(a+b)
+    return r  //позволяет использовать переменную вне функции
+}
+f4()
+
+function f5(grades)
+{
+    let s = 0
+    for (const g of grades)
+    {
+        s+=g
+    }
+    return s/grades.length
+}
+
+console.log(f5([5,4,3,5,4,2,2,2]))
+</script>
