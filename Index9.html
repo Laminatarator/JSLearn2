@@ -1,0 +1,64 @@
+<!doctype HTML>
+<style>
+    body{
+      background-color: black;
+    }
+</style>
+<body></body>
+<script>
+
+function isEven(n)
+{
+    console.log(n, n%2, n%2===0)
+    return n%2===0
+}
+//num = prompt('Введите число')
+
+numbers = [1, 2, 3]
+
+function isOdd(n)
+{
+    var odd = []
+    for(i in n)
+    {
+        if(i%2==0)
+        {
+            odd.push(false)
+        }
+        else
+        {
+            odd.push(true)
+        }
+    }
+    return(odd)
+}
+
+function isPositive(n)
+{
+    var positive = []
+    for(i in n)
+    {
+        if(i>=0)
+        {
+            positive.push(true)
+        }
+        else
+        {
+            positive.push(false)
+        }
+    }
+    return(positive)
+}
+console.log(isOdd(numbers))
+console.log(isPositive(numbers))
+// if(isEven(num))
+// {
+//     alert(`Число ${num} четное`)
+// }
+// else
+// {
+//     alert(`Число ${num} нечетное`)
+// }
+
+
+</script>
