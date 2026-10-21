@@ -1,0 +1,41 @@
+<!doctype HTML>
+<style>
+    body{
+      background-color: black;
+    }
+</style>
+<body>
+  <button>123</button>
+</body>
+<script>
+
+  function h2s(n)
+  {
+    const r = n *60 *60
+    return r
+  }
+// alert(h2s(6))
+// console.log(h2s(85))
+// console.log(h2s(1))
+// console.log(h2s(0.1))
+  function summ(g)
+  {
+    let res = 0
+    for (const i of g)
+    {
+      res += i
+    }
+    return res
+  }
+  // alert(summ([1, 8, 9, -8, 4, -20, 46]))
+  // alert(summ([]))
+  // alert(summ([0.5, 0.6, -0.04, 0.0833]))
+  function avg(ns)
+  {
+    const res = summ(ns)/ns.length
+    return res
+  }
+  console.log(avg([1,5,6,8,4,8,9,-74,7985,49]))
+
+
+</script>
