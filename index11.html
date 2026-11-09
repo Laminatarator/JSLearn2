@@ -1,0 +1,24 @@
+<!doctype HTML>
+
+<span>Hello world! first</span>
+<br>
+<span>Hello world!  second </span>
+<br>
+<button id="b1">Отмоисеить</button>
+
+<script>
+    const $span = (document.querySelector('span'))
+    console.log($span.textContent) 
+    $span.textContent = 'Text'
+    const $spansElements = document .querySelectorAll('span')
+    console.log($spansElements)
+    $spansElements[1].textContent = 'Also text'
+    $button = document.querySelector('#b1')
+    console.log($button)
+    console.dir($button)
+    $button.addEventListener('click', function()
+    {
+        console.log('Bleh :P')
+    }
+    )   
+</script>
