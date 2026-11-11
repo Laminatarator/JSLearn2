@@ -1,0 +1,43 @@
+<!doctype HTML>
+
+<div>
+<input type="text" id="i-1">
+<br>
+<button id="b-1">Send</button>
+<button id="b-2">Clear</button>
+</div>
+
+<script>
+
+    const $i = document.querySelector('#i-1')
+    const $b = document.querySelector('#b-1')
+    const $bc = document.querySelector('#b-2')
+    console.dir($i)
+    console.dir($b)
+
+$b.addEventListener('click', function()
+{
+    text = $i.value
+    if (text >=10)
+    {
+        console.log('More than 10')
+        $b.setAttribute(
+            'style',
+            'border: 4px solid green; border-radius: 4px;'
+        )
+    }
+    else
+    {
+        console.log('Less than 10')
+                $b.setAttribute(
+            'style',
+            'border: 4px solid red; border-radius: 4px;'
+        )
+    }
+})
+$bc.addEventListener('click', function(){
+    $i.value = ''
+    $b.removeAttribute('style')
+    console.log('Cleared')
+})
+</script>
