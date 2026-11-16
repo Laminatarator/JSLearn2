@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<body>
+    <ol id="todo-list"></ol>
+    <button id="add-task">Добавить задачу</button>
+</body>
+<script>
+
+    const $e = document.createElement('div')
+    const $tl = document.getElementById("todo-list")
+    const $at = document.getElementById("add-task")
+    $e.textContent = 'Dynamic div'
+    console.log($e)
+    document.body.append($e)
+    $e.setAttribute
+    (
+        'style',
+        'boder: 3px, solid, black'
+    )
+$e.addEventListener('click', function(){
+    $e.setAttribute(
+        'style',
+        'boder: 3px, solid, green'
+    )
+})
+const tasks = [
+    'раз',
+    'два',
+    'три',
+    'четыре',
+    'пять',
+]
+for (const task of tasks)
+{
+    console.log(`Создаю эллемент для задачи:${task}`)
+    const $li = document.createElement('li')
+    $li.textContent = task
+    $tl.append($li)
+    console.log($li)
+}
+
+$at.addEventListener('click', function(){
+    const text = prompt('Напишите задачу:')
+    if(text === null){
+    alert('Ошибка')
+}
+else{
+    tasks.push(text)
+    const $li = document.createElement('li')
+    $li.textContent = text
+    $tl.append($li)
+
+}
+})
+
+</script>

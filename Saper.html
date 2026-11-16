@@ -1,47 +1,58 @@
-<!doctype HTML>
-<style>
-    body { 
-        background-color: black;
-}
-</style>
-<body > </body>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { 
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
 <script>
+let pole = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
 
-let pole = 
-[
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0]
+let bombsLeft = 8;
 
-]
-console.log(pole)
-let currow = -1
-let curstr = -1
-for (let bombsleft = 8; bombsleft>=0; bombsleft--){
-        currow = Math.floor(Math.random()*10 -1)
-        curstr = Math.floor(Math.random()*10 -1)
-       console.log( pole[currow][curstr])  
 
+while (bombsLeft > 0) {
+    let curRow = Math.floor(Math.random() * 9); 
+    let curCol = Math.floor(Math.random() * 9); 
+    if (pole[curRow][curCol] === 0) {
+        pole[curRow][curCol] = 1;
+        bombsLeft--;
+    }
 }
 
-/*
-console.log(pole[1])
-let userrow = prompt('Введите столбец')
-let userstr = prompt('Введите строку')
+console.log(pole);
+isAlive = true;
+while (isAlive==true){
+let userCol = prompt('Введите столбец');
+let userRow = prompt('Введите строку');
 
-if (pole[userrow][userstr] ==0)
-{
-    alert('Клетка пуста')
+if (pole[userRow] !== undefined && pole[userRow][userCol] !== undefined) {
+    if (pole[userRow][userCol] === 0) {
+        console.log('Клетка пуста');
+    } else {
+        isAlive=false;
+        console.log('Это бомба!');
+        isAlive=false;
+    }
+} else {
+    isAlive=false;
+    console.log('Неверные координаты!');
 }
-else
-{
-    alert('Это бомба')
 }
-*/
-
 </script>
+</body>
+</html>
