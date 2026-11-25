@@ -1,0 +1,95 @@
+<div>
+    <input type="text" id="note-input">
+    <button id="add-note">
+        Создать
+    </button>
+
+    <ol id="notes-list"></ol>
+
+    <button id="save-button">
+        Сохранить все заметки
+    </button>
+</div>
+
+<script>
+const $i = document.querySelector('#note-input')
+const $b = document.querySelector('#add-note')
+const $l = document.querySelector('#notes-list')
+const $sb = document.querySelector('#save-button')
+
+const notes = JSON.parse(localStorage.getItem('notes') ?? '[]')
+
+$b.addEventListener('click', function () {
+    const text = $i.value
+
+    if (text === '') {
+        alert('Заметка не может быть пустой')
+    } else {
+        notes.push(text)
+        clearListBeforeRender()
+        renderNotes()
+    }
+})
+
+function renderNotes() {
+    for (const index in notes) {
+        const text = notes[Number(index)]
+
+        console.log(`Создаю элементы для заметки: "${text}"`)
+        const $li = document.createElement('li')
+        const $text = document.createElement('span')
+        const $b1 = document.createElement('button')
+        const $b2 = document.createElement('button')
+
+        const $i1 = document.createElement('input')
+        const $b3 = document.createElement('button')
+
+        $text.textContent = text
+        $b1.textContent = 'Редактировать'
+        $b2.textContent = 'Удалить'
+        $i1.hidden = true
+        $b3.textContent = 'Сохранить'
+        $b3.hidden = true
+
+        $li.append($text, $i1, $b3, $b1, $b2)
+        console.log($li)
+        $l.append($li)
+
+        $b2.addEventListener('click', function () {
+            $li.remove()
+            notes.splice(Number(index), 1)
+        })
+
+        $b1.addEventListener('click', function () {
+            $text.hidden = true
+            $b1.hidden = true
+            $i1.hidden = false
+            $b3.hidden = false
+            $i1.value = notes[index]
+        })
+
+        $b3.addEventListener('click', function () {
+            $text.hidden = false
+            $b1.hidden = false
+            $i1.hidden = true
+            $b3.hidden = true
+
+            notes[index] = $i1.value
+            $text.textContent = $i1.value
+        })
+    }
+}
+
+function clearListBeforeRender() {
+    $l.innerHTML = ''
+}
+
+$sb.addEventListener('click', function () {
+    localStorage.setItem(
+        'notes',
+        JSON.stringify(notes)
+    )
+})
+
+renderNotes()
+</script>
